@@ -1,0 +1,23 @@
+name: Comment on Issue
+
+on:
+  issues:
+    types: [opened]  # Trigger the workflow when an issue is opened
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add a comment to the issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issueComment = "Thank you for opening this issue! We will look into it.";
+            const { context } = require('@actions/github');
+            await github.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
+              body: issueComment
+            });
+            console.log(context.repo)
