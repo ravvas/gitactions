@@ -14,7 +14,6 @@ jobs:
         with:
           script: |
             const issueComment = "Thank you for opening this issue! We will look into it.";
-            const { context } = require('@actions/github');
             await github.issues.createComment({
               ...context.repo,
               issue_number: context.issue.number,
