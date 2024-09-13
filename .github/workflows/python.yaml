@@ -2,7 +2,9 @@ name: My Practice github actions 1
 
 run-name:  "Run #${{ github.run_number }} $GITHUB_RUN_NUMBER "
 
-on: [push]
+on: 
+  push: 
+  workflow_dispatch:
 
 jobs:
   build:
