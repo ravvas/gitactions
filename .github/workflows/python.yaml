@@ -1,6 +1,6 @@
 name: My Practice github actions 1 
 
-run-name: This is run name $GITHUB_RUN_NUMBER  #${{ github.run_number }}
+run-name:  "Run #${{ github.run_number }} $GITHUB_RUN_NUMBER "
 
 on: [push]
 
