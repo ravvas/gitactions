@@ -1,6 +1,6 @@
-name: My Practice github actions 1 
+name: experimentation 
 
-run-name: "This is run #${{ github.run_number }}"
+run-name: "Experimentation"
 
 on: 
   workflow_dispatch:
