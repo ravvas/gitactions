@@ -1,4 +1,4 @@
-name: Python package
+name: My Practice github actions 1 
 
 on: [push]
 
