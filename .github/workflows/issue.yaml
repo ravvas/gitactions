@@ -15,7 +15,7 @@ jobs:
           script: |
             const issueComment = "Thank you for opening this issue! We will look into it.";
             await github.issues.createComment({
-              ...context.repo,
-              issue_number: context.issue.number,
+              ...github.context.repo,  // Use github.context.repo directly
+              issue_number: github.context.issue.number,  // Use github.context.issue.number directly
               body: issueComment
             });
