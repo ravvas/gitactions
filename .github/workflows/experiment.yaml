@@ -15,7 +15,6 @@ jobs:
           echo $GREETING 
           echo $ADDITION 
           echo $EVENT 
-          uses : actions/checkout@v4
         env:
           GREETING: ${{ 'hello'}} world
           ADDITION: ${{ 1 == 2}}
