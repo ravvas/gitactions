@@ -15,4 +15,15 @@ jobs:
           python-version: "pypy3.10"
       # You can test your matrix by printing the current Python version
       - name: Display Python version
-        run: echo ${{ github.repository }}
+        run: !
+          echo "github repo" ${{ github.repository }}
+          echo "github repo" ${{ github.GITHUB_ACTION }}
+          echo "github repo" ${{ github.GITHUB_ACTOR }}
+          echo "github repo" ${{ github.GITHUB_EVENT}}
+          echo "github repo" ${{ github.GITHUB_EVENT_PATH}}
+          echo "github repo" ${{ github.GITHUB_WORKFLOW}}
+          echo "github repo" ${{ github.GITHUB_RUN_ID }}
+          echo "github repo" ${{ github.GITHUB_SHA }}
+          echo "github repo" ${{ github.GITHUB_EVENT}}
+          echo "github repo" ${{ github.GITHUB_EVENT_PATH}}
+          echo "github repo" ${{ github.GITHUB_WORKFLOW}}
