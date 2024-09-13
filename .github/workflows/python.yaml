@@ -1,5 +1,7 @@
 name: My Practice github actions 1 
 
+run-name: This is run name 
+
 on: [push]
 
 jobs:
