@@ -3,13 +3,16 @@ name: My Practice github actions 1
 run-name:  "Run #${{ github.run_number }} $GITHUB_RUN_NUMBER "
 
 on: 
-  push: 
-  workflow_dispatch:
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python 
+        uses: actions/setup-python@v5
+        with:
+          python-version: "pypy3.10"
       # You can test your matrix by printing the current Python version
       - name: Display Python version
         run: |          
