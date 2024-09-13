@@ -1,22 +1,22 @@
-name: Comment on Issue
-
+name: Add comment
 on:
   issues:
-    types: [opened]  # Trigger the workflow when an issue is opened
-
+    # types:
+    #   - labeled
 jobs:
-  comment:
+  add-comment:
+    if: github.event.label.name == 'help wanted'
     runs-on: ubuntu-latest
-
+    permissions:
+      issues: write
     steps:
-      - name: Add a comment to the issue
-        uses: actions/github-script@v6
-        with:
-          script: |
-            const issueComment = "Thank you for opening this issue! We will look into it.";
-            await github.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: github.context.issue.number,  // Use github.context.issue.number directly
-              body: issueComment
-            });
+      - name: Add comment
+        run: gh issue comment "$NUMBER" --body "$BODY"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: >
+            This issue is available for anyone to work on.
+            **Make sure to reference this issue in your pull request.**
+            :sparkles: Thank you for your contribution! :sparkles:
