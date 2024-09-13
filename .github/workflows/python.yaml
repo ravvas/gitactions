@@ -2,7 +2,8 @@ name: My Practice github actions 1
 
 run-name: "This is run #${{ github.run_number }}"
 
-on: [push]
+on: 
+  push : 
 
 jobs:
   build:

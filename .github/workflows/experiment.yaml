@@ -1,0 +1,23 @@
+name: My Practice github actions 1 
+
+run-name: "This is run #${{ github.run_number }}"
+
+on: 
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: experimenting
+        run: |
+          echo $GREETING 
+          echo $ADDITION 
+          echo $EVENT 
+          uses : actions/checkout@v4
+        env:
+          GREETING: ${{ 'hello'}} world
+          ADDITION: ${{ 1 == 2}}
+          EVENT : ${{github.event_name}}
+      
