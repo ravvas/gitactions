@@ -16,13 +16,13 @@ jobs:
       # You can test your matrix by printing the current Python version
       - name: Display Python version
         run: |          
-          echo "github repo" $GITHUB_ACTION 
-          echo "github repo" $GITHUB_ACTOR 
-          echo "github repo" $GITHUB_EVENT
-          echo "github repo" $GITHUB_EVENT_PATH
-          echo "github repo" $GITHUB_WORKFLOW
-          echo "github repo" $GITHUB_RUN_ID 
-          echo "github repo" $GITHUB_SHA 
-          echo "github repo" $GITHUB_EVENT
-          echo "github repo" $GITHUB_EVENT_PATH
-          echo "github repo" $GITHUB_WORKFLOW
+          echo "GITHUB_ACTION: $GITHUB_ACTION"
+          echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+          echo "GITHUB_EVENT: $GITHUB_EVENT"
+          echo "GITHUB_EVENT_PATH: $GITHUB_EVENT_PATH"
+          echo "GITHUB_WORKFLOW: $GITHUB_WORKFLOW"
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+          echo "GITHUB_RUN_ID: $GITHUB_RUN_ID"
+          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
+          echo "GITHUB_SHA: $GITHUB_SHA"
