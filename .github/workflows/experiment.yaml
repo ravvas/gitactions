@@ -1,5 +1,0 @@
-name : Simple Workflow
-run-name : Run of the simple workflow
-workflow:
-on: 
-  push: 
