@@ -27,4 +27,4 @@ jobs:
     steps: 
       - name: Die the person 
         run: | 
-        echo "Result : ${{toJson(needs.build)}}"
+          echo "Result : ${{toJson(needs.build)}}"
