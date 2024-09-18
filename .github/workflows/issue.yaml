@@ -12,16 +12,16 @@ jobs:
   build:
     runs-on : ubuntu-latest
     steps: 
-      - name : Experimenting
-        uses : actions/checkout@v4
-      - name : check the repo settings 
-        run :  |
+      - name: Experimenting
+        uses: actions/checkout@v4
+      - name: check the repo settings 
+        run:  |
           ls -ltr
           echo "${{toJson(runner)}}"
           echo "${{toJson(env)}}"
           echo "${{toJson(secrets)}}"
   deploy: 
-    runs-on : ubuntu-latest
+    runs-on: ubuntu-latest
     needs: build
     if: ${{github.actor != 'test'}}
     steps: 
