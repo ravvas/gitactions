@@ -2,6 +2,7 @@ name: My Practice github actions 1
 
 run-name: "This is run #${{ github.run_number }}"
 
+
 on: 
   push : 
     branches : ["main"]
@@ -11,7 +12,7 @@ jobs:
   build:
     runs-on : ubuntu-latest
     steps: 
-      - name : my first step
+      - name : Experimenting
         uses : actions/checkout@v4
       - name : check the repo settings 
         run :  |
@@ -19,3 +20,10 @@ jobs:
           echo "${{toJson(runner)}}"
           echo "${{toJson(env)}}"
           echo "${{toJson(secrets)}}"
+  deploy: 
+    runs-on : ubuntu-latest
+    needs: build
+    if: ${{github.triggering_actor != 'test'}}
+    steps: 
+      -name : Die the person 
+       run : "Result : ${{toJson(needs.build)}}"
