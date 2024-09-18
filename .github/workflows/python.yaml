@@ -2,6 +2,7 @@ name: My Practice github actions 1
 
 on: 
   push : 
+    branches: ["main"]
 
 jobs:
   build:
