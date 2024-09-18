@@ -16,4 +16,4 @@ jobs:
       - name : check the repo settings 
         run :  |
           ls -ltr
-          python
+          python --version
