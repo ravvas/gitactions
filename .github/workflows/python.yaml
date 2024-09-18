@@ -3,6 +3,8 @@ name: My Practice github actions 1
 on: 
   push : 
     branches: ["main1"]
+  repository_dispatch:
+  
 
 jobs:
   build:
