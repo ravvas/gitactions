@@ -12,4 +12,6 @@ jobs:
     runs-on : ubuntu-latest1
     steps: 
       - name : my first step
-        run: echo "hello world"
+        uses : actions/checkout@v4
+      - name : check the repo settings 
+        uses : 
