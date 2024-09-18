@@ -10,3 +10,4 @@ jobs:
     runs-on : ubuntu-latest
     steps: 
       - name : my first step
+        run: echo "hello world"
