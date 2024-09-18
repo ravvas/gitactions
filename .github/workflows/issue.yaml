@@ -25,6 +25,6 @@ jobs:
     needs: build
     if: ${{github.actor != 'test'}}
     steps: 
-      -name: Die the person 
-       run: | 
+      - name: Die the person 
+        run: | 
         echo "Result : ${{toJson(needs.build)}}"
