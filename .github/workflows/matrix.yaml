@@ -8,8 +8,9 @@ on:
 jobs: 
   matrix_tests: 
     strategy: 
-      version: ["0.1.0","0.1.1","0.2.0"]
-      os: [ubuntu-latest,windows-latest]
+      matrix:
+        version: ["0.1.0","0.1.1","0.2.0"]
+        os: [ubuntu-latest,windows-latest]
     runs-on: ${{matrix.os}}
     steps:
       - name : Run a multi liner script 
