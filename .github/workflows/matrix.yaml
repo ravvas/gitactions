@@ -11,7 +11,7 @@ jobs:
       matrix:
         version: ["0.1.0","0.1.1","0.2.0"]
         os: [ubuntu-latest,windows-latest,mac-latest]
-    runs-on: ${{matrix.os}}
+    runs-on: ubuntu-latest
     steps:
       - name : Run a multi liner script 
         run: | 
