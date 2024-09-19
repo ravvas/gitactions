@@ -5,13 +5,19 @@ run-name : "This is run number "
 on: 
   workflow_dispatch: 
 
+concurrency: 
+  group: ${{github.workflow}}
+  cancel-in-progress : true 
+
 jobs: 
   matrix_tests: 
     strategy: 
       matrix:
-        version: ["0.1.0","0.1.1","0.2.0"]
-        os: [ubuntu-latest,windows-latest,mac-latest]
-    runs-on: ubuntu-latest
+        version: ["0.1.0","0.1.1"]
+        os: [ubuntu-latest,windows-latest,macos-13]
+    runs-on: ${{matrix.os}}
+    concurrency: 
+      group: ${{github.job}}-${{matrix.os}}
     steps:
       - name : Run a multi liner script 
         run: | 
