@@ -15,4 +15,4 @@ jobs:
     steps:
       - name : Run a multi liner script 
         run: | 
-          echo "Running on ${{matrxi.os}} version ${{matrix.version}}"
+          echo "Running on ${{matrix.os}} version ${{matrix.version}}"
