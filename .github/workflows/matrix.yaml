@@ -13,6 +13,5 @@ jobs:
     runs-on: ${{matrix.os}}
     steps:
       - name : Run a multi liner script 
-      - run: | 
+        run: | 
           echo "Running on ${{matrxi.os}} version ${{matrix.version}}"
-          
